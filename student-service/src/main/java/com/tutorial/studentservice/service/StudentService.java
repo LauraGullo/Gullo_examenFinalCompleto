@@ -37,7 +37,7 @@ public class StudentService {
     }
 
     public List<Subject> getSubjects(int studentId) {
-        List<Subject> subjects = restTemplate.getForObject("http://car-service/car/byuser/" + studentId, List.class);
+        List<Subject> subjects = restTemplate.getForObject("http://subject-service/subject/bystudent/" + studentId, List.class);
         return subjects;
     }
 

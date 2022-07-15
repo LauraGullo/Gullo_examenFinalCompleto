@@ -18,7 +18,7 @@ public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String brand;
-    private String model;
+    private String name;
+    private String professor;
     private int studentId;
 }
