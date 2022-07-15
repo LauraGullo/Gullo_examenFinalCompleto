@@ -27,8 +27,6 @@ public class UserService {
     @Autowired
     CarFeignClient carFeignClient;
 
-    @Autowired
-    BikeFeignClient bikeFeignClient;
 
     public List<User> getAll() {
         return userRepository.findAll();
@@ -48,10 +46,7 @@ public class UserService {
         return cars;
     }
 
-    public List<Bike> getBikes(int userId) {
-        List<Bike> bikes = restTemplate.getForObject("http://bike-service/bike/byuser/" + userId, List.class);
-        return bikes;
-    }
+
 
     public Car saveCar(int userId, Car car) {
         car.setUserId(userId);
@@ -59,30 +54,7 @@ public class UserService {
         return carNew;
     }
 
-    public Bike saveBike(int userId, Bike bike) {
-        bike.setUserId(userId);
-        Bike bikeNew = bikeFeignClient.save(bike);
-        return bikeNew;
-    }
 
-    public Map<String, Object> getUserAndVehicles(int userId) {
-        Map<String, Object> result = new HashMap<>();
-        User user = userRepository.findById(userId).orElse(null);
-        if(user == null) {
-            result.put("Mensaje", "no existe el usuario");
-            return result;
-        }
-        result.put("User", user);
-        List<Car> cars = carFeignClient.getCars(userId);
-        if(cars.isEmpty())
-            result.put("Cars", "ese user no tiene coches");
-        else
-            result.put("Cars", cars);
-        List<Bike> bikes = bikeFeignClient.getBikes(userId);
-        if(bikes.isEmpty())
-            result.put("Bikes", "ese user no tiene motos");
-        else
-            result.put("Bikes", bikes);
-        return result;
-    }
+
+
 }
