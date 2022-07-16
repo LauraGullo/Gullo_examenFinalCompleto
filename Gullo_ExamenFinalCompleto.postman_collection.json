@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "796bc6b8-39b9-4b48-8525-c8d145a8208c",
+		"name": "Gullo_ExamenFinalCompleto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19989529"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "savestudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"laura gullo\",\r\n \"email\":\"lauragullo@gmail.com\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/student",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveSubject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"bootcamp01\",\r\n    \"professor\":\"pedro\",\r\n    \"studentId\":1  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/student/savesubject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"savesubject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSubjectByIdstudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/subjects/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"subjects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStudentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "savesubject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"bootcamp01\",\r\n    \"professor\":\"Hugo\",\r\n    \"studentId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/subject",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/subject",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByStudentId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
