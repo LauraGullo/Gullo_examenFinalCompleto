@@ -49,6 +49,15 @@ public class StudentController {
     }
 
 
+ /*   @PostMapping("/savesubject/{studentId}")
+    public ResponseEntity<Subject> saveSubject(@PathVariable("studentId") int studentId, @RequestBody Subject subject) {
+        if(studentService.getStudentById(studentId) == null)
+            return ResponseEntity.notFound().build();
+        Subject subjectNew = studentService.saveSubject(studentId, subject);
+        return ResponseEntity.ok(subject);
+    }*/
+
+
     @PostMapping("/savesubject/{studentId}")
     public ResponseEntity<Subject> saveSubject(@PathVariable("studentId") int studentId, @RequestBody Subject subject) {
         if(studentService.getStudentById(studentId) == null)

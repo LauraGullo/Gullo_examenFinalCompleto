@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "car-service")
-@RequestMapping("/car")
+@FeignClient(name = "subject-service")
+@RequestMapping("/subject")
 public interface SubjectFeignClient {
 
     @PostMapping()
     Subject save(@RequestBody Subject subject);
 
-    @GetMapping("/byuser/{studentId}")
+    @GetMapping("/bystudent/{studentId}")
     List<Subject> getSubjects(@PathVariable("studentId") int studentId);
 }

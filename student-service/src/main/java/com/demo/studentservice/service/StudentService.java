@@ -41,12 +41,19 @@ public class StudentService {
         return subjects;
     }
 
+/*
     public Subject saveSubject(int studentId, Subject subject) {
         subject.setStudentId(studentId);
         Subject subjectNew = subjectFeignClient.save(subject);
         return subjectNew;
     }
+*/
 
+    public Subject saveSubject(int studentId, Subject subject) {
+        subject.setStudentId(studentId);
+        Subject subjectNew = subjectFeignClient.save(subject);
+        return subjectNew;
+    }
 
 
 
